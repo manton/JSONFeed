@@ -1,0 +1,314 @@
+@title Version 1
+# JSON Feed Version 1
+
+<span id="byline">by <a href="http://inessential.com/">Brent Simmons</a> and <a href="http://manton.org/">Manton Reece</a></a>
+
+(This page is in progress — please don’t pass this link around just yet. Thanks! -Brent)
+
+The JSON Feed format is a pragmatic syndication format, like [RSS](http://cyber.harvard.edu/rss/rss.html) and [Atom](https://tools.ietf.org/html/rfc4287), but with one big difference: it’s JSON instead of XML.
+
+For most developers, JSON is *far* easier to read and write than XML. Developers may groan at picking up an XML parser, but decoding JSON is often just a single line of code.
+
+Our hope is that, because of the lightness of JSON and simplicity of the JSON Feed format, developers will be more attracted to developing for the open web.
+
+Here’s a simple example:
+
+	{
+		"version": "https://jsonfeed.org/version/1",
+		"title": "My Example Feed",
+		"home_page_url": "https://example.org/",
+		"feed_url": "https://example.org/feed.json",
+		"items": [
+		  {
+		  	"id": "2",
+		  	"content_text": "This is a second item.",
+		  	"url": "https://example.org/second-item"
+		  },
+		  {
+		  	"id": "1",
+		  	"content_html": "<p>Hello, world!</p>",
+		  	"url": "https://example.org/initial-post"
+		  }
+		]
+	}
+
+It supports more than just the above, of course.
+
+## Goals
+
+After making feeds easier to read and write, our second goal is to provide a format that’s self-documenting and difficult to do wrong.
+
+We also want to support:
+
+* Microblogs, which are often plain text and without titles. So much web writing today is Twitter-like, which is actually plain text.
+* Multiple attachments.
+* Modern needs such as avatar images, feed icons and favicons, and banner and featured images. Feed readers should not have to search and scrape to guess at these things.
+* A simple way to add extensions.
+
+## The Structure of a Feed
+
+A JSON Feed is a list that may change over time, and the individual items in the list may change.
+
+Think of a blog or microblog, Twitter or Facebook timeline, set of commits to a repository, or even a server log. These are all lists, and each could be described by a feed.
+
+A JSON Feed starts with some info at the top: it says where the feed comes from, and may say who created it and so on.
+
+After that there’s an array of objects — `items` — that describe each object in the list.
+
+### Top-level
+
+* `version` (required, string) is the URL of the version of the format the feed uses. This should appear at the very top, though we recognize that not all JSON generators allow for ordering.
+
+* `title` (required, string) is the name of the feed, which will often correspond to the name of the website (blog, for instance), though not necessarily.
+
+* `home_page_url` (optional but strongly recommended, string) is the URL of the resource that the feed describes. This resource may or may not actually be a “home” page, but it should be an HTML page. If a feed is published on the public web, this should be considered as required. But it may not make sense in the case of a file created on a desktop computer, when that file is not shared or is shared only privately.
+
+* `feed_url` (optional but strongly recommended, string) is the URL of the feed, and serves as the unique identifier for the feed. As with `home_page_url`, this should be considered required for feeds on the public web.
+
+* `description` (optional, string) provides more detail, beyond the `title`, on what the feed is about. A feed reader may display this text.
+
+* `user_comment` (optional, string) is a description of the purpose of the feed. This is for the use of people looking at the raw JSON, and should be ignored by feed readers.
+
+* `next_url` (optional, string) is the URL of a feed that provides the next n items, where n is determined by the publisher. This allows for pagination, but with the expectation that reader software is not required to use it and probably won’t use it very often. `next_url` must not be the same as `feed_url`, and it must not be the same as a previous `next_url` (to avoid infinite loops).
+
+* `icon` (optional, string) is the URL of an image for the feed suitable to be used in a timeline, much the way an avatar might be used. It should be square and relatively large — such as 512 x 512 — so that it can be scaled-down and so that it can look good on retina displays. It should use transparency where appropriate, since it may be rendered on a non-white background.
+
+* `favicon` (optional, string) is the URL of an image for the feed suitable to be used in a source list. It should be square and relatively small, but not smaller than 64 x 64 (so that it can look good on retina displays). As with `icon`, this image should use transparency where appropriate, since it may be rendered on a non-white background.
+
+* `author` (optional, object) specifies the feed author. The author object has several members. These are all optional — but if you provide an author object, then at least one is required:
+
+    * `name` (optional, string) is the author’s name.
+
+    * `url` (optional, string) is the URL of a site owned by the author. It could be a blog, micro-blog, Twitter account, and so on. Ideally the linked-to page provides a way to contact the author, but that’s not required. The URL could be a mailto: link, though we suspect that will be rare.
+
+    * `avatar` (optional, object) is the URL for an image for the author. As with `icon`, it should be square and relatively large — such as 512 x 512 — and should use transparency where appropriate, since it may be rendered on a non-white background.
+
+* `expired` (optional, boolean) says whether or not the feed is finished — that is, whether or not it will ever update again. A feed for a temporary event, such as an instance of the Olympics, could expire. If the value is `true`, then it’s expired. Any other value, or the absence of `expired`, means the feed may continue to update.
+
+* `hubs` (very optional, array of objects) describes endpoints that can be used to subscribe to real-time notifications from the publisher of this feed. Each object has a `type` and `url`, both of which are required. See the section “Subscribing to Real-time Notifications” below for details.
+
+### Items
+
+`items` is an array, and is required. An item includes:
+
+* `id` (required, string) is unique for that item for that feed over time. If an item is ever updated, the `id` should be unchanged. New items should never use a previously-used `id`. If an `id` is presented as a number or other type, a JSON Feed reader must coerce it to a string. Ideally, the `id` is the full URL of the resource described by the item, since URLs make great unique identifiers.
+
+* `url` (optional, string) is the URL of the resource described by the item. It’s the permalink. This may be the same as the `id` — but should be present regardless. 
+
+* `external_url` (very optional, string) is the URL of a page elsewhere. This is especially useful for linkblogs. If `url` links to where you’re talking about a thing, then `external_url` links to the thing you’re talking about.
+
+* `title` (optional, string) is plain text. Microblog items in particular may omit titles.
+
+* `content_html` and `content_text` are each optional strings — but one or both must be present. This is the HTML or plain text of the item. Important: the only place HTML is allowed in this format is in `content_html`. A Twitter-like service might use `content_text`, while a blog might use `content_html`. Use whichever makes sense for your resource. (It doesn’t even have to be the same for each item in a feed.)
+
+* `summary` (optional, string) is a plain text sentence or two describing the item. This might be presented in a timeline, for instance, where a detail view would display all of `content_html` or `content_text`.
+
+* `image` (optional, string) is the URL of the main image for the item. This image may also appear in the `content_html` — if so, it’s a hint to the feed reader that this is the main, featured image. Feed readers may use the image as a preview (probably resized as a thumbnail and placed in a timeline).
+
+* `banner_image` (optional, string) is the URL of an image to use as a banner. Some blogging systems (such as [Medium](https://medium.com/)) display a different banner image chosen to go with each post, but that image wouldn’t otherwise appear in the `content_html`. A feed reader with a detail view may choose to show this banner image at the top of the detail view, possibly with the title overlaid.
+
+* `date_published` (optional, string) specifies the date in ISO 8601 format. (Example: `2010-02-07T14:04:00-05:00`.)
+
+* `date_modified` (optional, string) specifies the modification date in ISO 8601 format.
+
+* `author` (optional, object) has the same structure as the top-level `author`. If not specified in an item, then the top-level `author`, if present, is the author of the item.
+
+* `tags` (optional, array of strings) can have any plain text values you want. Tags tend to be just one word, but they may be anything. Note: they are not the equivalent of Twitter hashtags. Some blogging systems and other feed formats call these categories.
+
+#### Attachments
+
+An individual item may have one or more attachments.
+
+* `attachments` (optional, array) lists related resources. Podcasts, for instance, would include an attachment that’s an audio or video file. Each attachment has several members:
+
+    * `url` (required, string) specifies the location of the attachment.
+
+    * `mime_type` (required, string) specifies the type of the attachment, such as “audio/mpeg.”
+
+    * `title` (optional, string) is a name for the attachment. Important: if there are multiple attachments, and two or more have the exact same `title` (when `title` is present), then they are considered as alternate representations of the same thing. In this way a podcaster, for instance, might provide an audio recording in different formats.
+
+    * `size_in_bytes` (optional, number) specifies how large the file is.
+
+    * `duration_in_seconds` (optional, number) specifies how long the attachment takes to listen to or watch.
+
+## Extensions
+
+Publishers can use custom objects in JSON Feeds. Names must start with an `_` character and be followed by a letter. Custom objects can appear anywhere in a feed.
+
+For instance, imagine a podcast directory service — call it Blue Shed Podcasts — that asks a podcaster to specify some additional information about a feed or item. A publisher would do something like this:
+
+	"_blue_shed": {
+		"about": "https://blueshed-podcasts.com/json-feed-extension-docs"
+		"explicit": false,
+		"copyright": "1948 by George Orwell",
+		"owner": "Big Brother and the Holding Company",
+		"subtitle": "All shouting, all the time. Double. Plus. Good."
+	}
+
+Feed readers that do not understand a given custom object must ignore it.
+
+The `about` string is there for a human looking at the feed, so they can understand what goes in the custom extension. It’s optional, but it should appear at least once in a feed that may contain multiple uses of `_blue_shed` (preferably in the first use, but that’s not required).
+
+Also, it’s good practice to name an extension with a company or service name, to provide a clue right away as to what it’s for and who made it.
+
+Further naming rules: the extension name and its member keys must not contain any `.` characters. The extension name, and only the extension name, must begin with an `_` character. (No standard keys will ever begin with an `_` — this is reserved for extensions.)
+
+Member keys should be alphanumeric. That said, emojis are not illegal — we’re not heartless — and somebody’s going to use them.
+
+## Subscribing to Real-time Notifications
+
+Traditional feed readers usually poll a web site for changes at a regular interval. This is fine for many applications, but there’s a more efficient approach for applications that need to know the moment a feed changes. The top-level `hubs` array points to one or more services that can be used by feed aggregators to subscribe to changes to this feed. Those hubs can then send a notification to the application as soon as the feed is updated.
+
+The `type` field describes the protocol used to talk with the hub, such as “rssCloud” or “WebSub.” When using WebSub, the value for the JSON Feed’s `feed_url` is passed for the `hub.topic` parameter. For more information about WebSub, see [the specification at the W3C](https://www.w3.org/TR/websub/).
+
+## Future Compatibility
+
+A version 1 feed will be a valid version 2 feed, and so on. Future versions may add things, but won’t make older feeds invalid.
+
+### Key Naming Rules
+
+In future versions, defined keys will always adhere to these rules:
+
+* Leading `_` characters are reserved for extensions.
+* Keys will be made of alphanumeric characters from the ASCII character set.
+* Keys will never contain a `.` character.
+
+## Suggestions for Publishers
+
+JSON Feed files must be served using the same MIME type — `application/json` — that’s used whenever JSON is served.
+
+The number of items in a feed is unlimited, but practical limits should be observed. A 1MB feed places a burden on feed readers, especially if there are many such feeds. Under 100K is ideal, and 250K is fine. Use your judgment. If you need to provide older items, consider using pagination and `next_url`.
+
+Publishers should support [Conditional GET](https://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers/), to limit impact on their system when feed readers poll for changes.
+
+Also, to further reduce bandwidth use, publishers should provide the top-level `icon` and `favicon` URLs. When not present, feed readers will often attempt to find these things by 1) downloading the home page and scraping the HTML, and 2) making one or more requests to likely locations for these images. To reduce traffic on your server, put this info in the feed.
+
+JSON Feeds should be encoded using UTF-8 — but any encoding that’s [legal JSON](https://www.ietf.org/rfc/rfc4627.txt) is legal for JSON Feeds.
+
+Any publisher already publishing RSS and/or Atom should continue to do so. In fact, if you’re trying to decide which format (of RSS, Atom, and JSON Feed) to use, and you can do only one, pick RSS — it’s time-tested, popular, and good.
+
+## Suggestions for Feed Readers
+
+If a feed is invalid JSON, then we strongly recommend not attempting to parse it or use partial data. You can’t rely on it.
+
+There are cases, though, where a required element might not be present. In the case of an `attachment` missing a `mime_type`, you can probably deal with it fine. After all, when you download the attached file, the web browser will provide a MIME type. (And you might have been able to guess it from the file suffix.)
+
+Another case might be a malformed `date_published` that you can’t parse. You might substitute the date the reader parsed it. (Feed readers have been doing that kind of thing for many years, for bad or missing dates.)
+
+As much as we’d like to encourage good feeds, we also emphasize that this is a pragmatic format, and the final test is user experience: if an error can be recovered from without significantly harming that experience, then it’s better than just refusing to use the feed (or part of the feed) at all.
+
+That said, there is one thing we insist on: any `item` without an `id` must be discarded. We come to this from years of experience dealing with feeds in other formats where unique identifiers are optional. Without unique identifiers, it’s impossible to reliably refer to a given `item` and its changes over time, and this is terrible for user experience and becomes a source of bug reports to you. (Your users will complain of “reruns.”) In that case, you may wish to alert the user that there’s a problem with the feed, and you may also wish to contact the publisher.
+
+For web-based feed readers, it would be helpful to publishers if you reported your subscription numbers. To do this, add a substring of the form `(n subscribers)`, where n is the actual number, to the user-agent header in your http and https requests.
+
+Feed readers are strongly advised to use [Conditional GET](https://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers/), in order to minimize bandwidth and CPU cycles on clients and servers.
+
+On the issue of which URL to use — `url` or `external_url` — when opening a web page: because an item’s `url` is always a permalink, the `url` should be the default. For linkblogs that include an `external_url`, feed readers may give users a choice which URL to open: perhaps by displaying the `external_url` prominently in the UI, perhaps by a preference to use these URLs when present, or by some other mechanism.
+
+### Discovery
+
+A web page should include a `link` tag that specifies the location of the JSON Feed. Like this:
+
+	<link rel="alternate" title="My Feed" type="application/json" href="https://example.org/feed.json" />
+
+This is the same as the feed discovery mechanism used for RSS and Atom.
+
+The `title` attribute is optional, but can be useful to differentiate multiple feeds — for instance, there might be a feed for all blog posts and a feed for comments on a specific post. These should have different titles.
+
+In an ideal world, manual discovery — by a human using a web browser — is also possible, by adding `feed.json` to the resource the feed describes. If there’s a blog at `https://example.org/blog/`, then a human could try `https://example.org/blog/feed.json` to find the feed.
+
+However, we realize that there are reasons — both technical and matters of preference — that prevent this from being universal, which is fine. But still, if you can do this, it would be nice.
+
+### Linking to a Feed on a Web Page
+
+Publishers are encouraged to provide a link to their JSON Feed — as they do with RSS and Atom feeds — on their websites. It’s okay to make the link text “JSON Feed,” but a more specific title is also okay.
+
+This spec does not address the problem of how to go from clicking a link in a browser to getting a feed added to a feed reader — which, to be fair, may not always be the user intention. And of course a feed reader may be a local app or a web app.
+
+However, the `user_comment` is your chance to tell someone eyeing a bunch of raw JSON in their web browser just what they’re looking at. Here’s an example:
+
+	"user_comment": "This feed allows you to read the posts from this site in any feed reader that supports the JSON Feed format. To add this feed to your reader, copy the following URL — https://example.org/feed.json — and add it your reader."
+
+## More Examples
+
+The below examples have just one item, for the sake of brevity in illustration. Normally a feed would have more than one item.
+
+### Podcast
+
+	{
+		"version": "https://jsonfeed.org/version/1",
+		"user_comment": "This is a podcast feed. You can add this feed to your podcast client using the following URL: http://therecord.co/feed.json",
+		"title": "The Record",
+		"home_page_url": "http://therecord.co/",
+		"feed_url": "http://therecord.co/feed.json",
+		"items": [
+		  {
+		  	"id": "http://therecord.co/chris-parrish",
+		  	"title": "Special #1 - Chris Parrish",
+		  	"url": "http://therecord.co/chris-parrish",
+		  	"content_text": "Chris has worked at Adobe and as a founder of Rogue Sheep, which won an Apple Design Award for Postage. Chris’s new company is Aged & Distilled with Guy English — which shipped Napkin, a Mac app for visual collaboration. Chris is also the co-host of The Record. He lives on Bainbridge Island, a quick ferry ride from Seattle.",
+		  	"content_html": "Chris has worked at <a href=\"http://adobe.com/\">Adobe</a> and as a founder of Rogue Sheep, which won an Apple Design Award for Postage. Chris’s new company is Aged & Distilled with Guy English — which shipped <a href=\"http://aged-and-distilled.com/napkin/\">Napkin</a>, a Mac app for visual collaboration. Chris is also the co-host of The Record. He lives on <a href=\"http://www.ci.bainbridge-isl.wa.us/\">Bainbridge Island</a>, a quick ferry ride from Seattle.",
+		  },
+		  "summary": "Brent interviews Chris Parrish, co-host of The Record and one-half of Aged & Distilled.",
+		  "date_published": "2014-05-09T14:04:00-07:00",
+		  "attachments": [
+		  	{
+		  		"url": "http://therecord.co/downloads/The-Record-sp1e1-ChrisParrish.m4a",
+		  		"mime_type": "audio/x-m4a",
+		  		"size_in_bytes": 89970236,
+		  		"duration_in_seconds": 6629
+		  	}
+		  ],
+		]
+	}
+
+Note that it uses both `content_text` and `content_html`, which is completely valid. An app such as iTunes, for instance, might prefer to use `content_text`, while a feed reader might prefer `content_html`.
+
+Also note while there is just one attachment, there could be several.
+
+### Microblog
+
+	{
+		"version": "https://jsonfeed.org/version/1",
+		"user_comment": "This is a microblog feed. You can add this to your feed reader using the following URL: https://example.org/feed.json",
+		"title": "Brent Simmons’s Microblog",
+		"home_page_url": "https://example.org/",
+		"feed_url": "https://example.org/feed.json",
+		"author": {
+			"name": "Brent Simmons",
+			"url": "http://example.org/",
+			"avatar": "https://example.org/avatar.png",
+		},
+		"items": [
+		  {
+		  	"id": "2347259",
+		  	"url": "https://example.org/2347259",
+		  	"content_text": "Cats are neat. \n\nhttps://example.org/cats",
+		  	"date_published": "2016-02-09T14:22:00-07:00"dodo
+		  }
+		]
+	}
+
+Note that `content_text` contains a URL. It’s still plain text. A reader may choose to turn URLs in plain text into clickable links. Note also that there’s no `title`.
+
+There are some JSON Feeds on the web:
+
+* [Shape Of](http://shapeof.com/feed.json)
+* [Flying Meat](http://flyingmeat.com/blog/feed.json)
+* [Maybe Pizza?](http://maybepizza.com/feed.json)
+* [Daring Fireball](https://daringfireball.net/feeds/json)
+* [Hypercritical](http://hypercritical.co/feeds/main.json)
+* [Manton Reece](https://manton.micro.blog/feed.json)
+* [Timetable](http://timetable.manton.org/feed.json) (podcast)
+* [inessential](http://inessential.com/feed.json)
+* [The Record](http://therecord.co/feed.json) (podcast)
+
+In addition, this website has its own [JSON Feed](https://jsonfeed.org/feed.json).
+
+## Reviewers
+
+The authors thank the following people for their extensive contributions and review, in alphabetical order: [Allen Pike](http://www.steamclock.com/blog/), [Craig Hockenberry](http://furbo.org/), [Daniel Jalkut](http://bitsplitting.org/), [Gus Mueller](http://shapeof.com/), [Guy English](https://twitter.com/gte), [Jim Correia](https://twitter.com/jimcorreia), [Joe Heck](https://rhonabwy.com/), [John Gruber](http://daringfireball.net/), [John Siracusa](https://twitter.com/siracusa), [Laura Savino](https://twitter.com/savinola), [Marco Arment](https://marco.org/), and [Paul Kafasis](https://onefoottsunami.com/).
+
+## See Also
+
+[Mapping RSS and Atom to JSON Feed](https://jsonfeed.org/mappingrssandatom)
