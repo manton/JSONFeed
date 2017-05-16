@@ -3,30 +3,75 @@ body {
 	margin-bottom: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
-	line-height: 1.55em;
-	font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 18px;
+	line-height: 1.6em;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.2em;
 	color: #333;
 	background-color: white;
 }
 a {
-	text-decoration: none;
-	}
+	color: #609C1B; /* #497614 but lightened up a bit to give better contrast against the body text */
+
+	text-decoration-line: underline;
+	text-decoration-style: solid; /* because dotted underlines look like hell in Chrome */
+	text-decoration-skip: ink;
+	-webkit-text-decoration-line: underline;
+	-webkit-text-decoration-style: dotted;
+}
+a:hover {
+	color: #497614;
+}
+
 h1, h2 {
+	margin: 0;
+	color: #666;
 	line-height: 1.3em;
 }
 h2 {
 	padding-top: 1em;
 }
+h3 {
+	color: #666;
+}
+
 #banner {
-	margin-top: 2em;
+	margin-top: 0;
 	border-bottom: 1px solid #ccc;
 	color #999;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
+	background-color: #8BE028;
+	width: 100%;
+	font-family: "SF Mono", Menlo, "Courier", monospace;
+	font-size: 2em;
+	line-height: 3em;
 }
 #banner a:link, #banner a:visited {
-	color: #999;
+	color: #497614;
+	text-decoration: none;
 }
+#banner div.title {
+	max-width: 650px;
+	margin: 0 auto;
+}
+#banner div.title a {
+	margin-top: 1em;
+	line-height: 1em;
+	margin-left: -5.5em;
+	text-transform: lowercase;
+	display: inline;
+}
+#banner div.title a:before {
+	line-height: 1em;
+    white-space: pre;
+	content: "{\"url\": \"";
+	color: #CAF696;
+}
+#banner div.title a:after {
+	line-height: 1em;
+	content: "\"}";
+	color: #CAF696;
+}
+
 #content {
 	padding-bottom: 2em;
 	max-width: 650px;
@@ -34,11 +79,20 @@ h2 {
 	margin-right: auto;
 }
 code, pre {
-	font-family: "SF Mono", Menlo, monospace;
-	font-size: 15px;
+	font-family: "SF Mono", Menlo, "Courier", monospace;
 	color: #666;
-	white-space: pre-wrap;
-	}
+ 	/* overflow scrolling works better on narrower screens - it also maintains the JSON hierarchy */
+	white-space: pre;
+	overflow: auto;
+	/* white-space: pre-wrap; */
+}
+code {
+	font-size: 0.9em;
+}
+pre {
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
 
 #footer {
 	margin-bottom: 0;
@@ -46,32 +100,78 @@ code, pre {
 	padding-top: 14px;
 	padding-bottom: 32px;
 	color: #666;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #8BE028;
 	text-align: center;
-	font-size: 16px;
+	font-size: 0.8em;
 	}
 #footer p {
 	margin-bottom: 18px;
 }
+#footer div.feedicon img {
+	border-radius: 6px;
+	width: 70px;
+	height: 70px;
+}
 
-@media (max-width: 760px) {
-	#content {
-		width: 500px;
-		max-width: 500px;
-		min-width: 500px;
-		}
+@media (max-width: 1100px) {
+	#banner div.title {
+		text-align: right;
+	}
+	#banner div.title a {
+		margin-right: -1.25em;
+	}
 }
-@media (max-width: 600px) {
+
+@media (max-width: 750px) {
+	#banner div.title a {
+		margin-right: 4px;
+	}
 	#content {
-		width: 450px;
-		max-width: 450px;
-		min-width: 450px;
-		}
+		max-width: 550px;
+	}
 }
-@media (max-width: 480px) {
+
+@media (max-width: 650px) {
+	#banner {
+		line-height: 2em;
+	}
+	#banner div.title {
+		font-size: 0.6em;
+	}
 	#content {
-		width: 310px;
-		max-width: 310px;
-		min-width: 310px;
-		}
+ 		margin: 0 30px;
+ 		font-size: 0.9em;
+		line-height: 1.3em;
+	}
+	code {
+		font-size: 0.85em;
+	}
+	pre {
+		font-size: 0.9em;
+		line-height: 1.3em;
+	}
 }
+
+@media (max-width: 320px) {
+	#banner div.title {
+		font-size: 0.5em;
+	}
+	#content {
+ 		margin: 0 20px;
+	}
+}
+
+/* 
+h1, h2 {
+	outline: 1px solid pink;
+}
+#banner div.title {
+	outline: 1px solid blue;
+}
+#banner div.title a {
+	outline: 1px solid red;
+}
+#content {
+	outline: 1px solid orange;
+}
+ */
