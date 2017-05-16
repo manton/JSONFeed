@@ -45,6 +45,8 @@ We also want to support:
 * Modern needs such as avatar images, feed icons and favicons, and banner and featured images. Feed readers should not have to search and scrape to guess at these things.
 * A simple way to add extensions.
 
+(Note about plain text: on this page it means “not HTML” — emojis, for instance, are considered plain text.)
+
 ## The Structure of a Feed
 
 A JSON Feed is a list that may change over time, and the individual items in the list may change.
@@ -107,7 +109,7 @@ After that there’s an array of objects — `items` — that describe each obj
 
 * `banner_image` (optional, string) is the URL of an image to use as a banner. Some blogging systems (such as [Medium](https://medium.com/)) display a different banner image chosen to go with each post, but that image wouldn’t otherwise appear in the `content_html`. A feed reader with a detail view may choose to show this banner image at the top of the detail view, possibly with the title overlaid.
 
-* `date_published` (optional, string) specifies the date in ISO 8601 format. (Example: `2010-02-07T14:04:00-05:00`.)
+* `date_published` (optional, string) specifies the date in [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format. (Example: `2010-02-07T14:04:00-05:00`.)
 
 * `date_modified` (optional, string) specifies the modification date in ISO 8601 format.
 
@@ -222,6 +224,12 @@ However, we realize that there are reasons — both technical and matters of pre
 ### Linking to a Feed on a Web Page
 
 Publishers are encouraged to provide a link to their JSON Feed — as they do with RSS and Atom feeds — on their websites. It’s okay to make the link text “JSON Feed,” but a more specific title is also okay.
+
+You can also the JSON Feed icon as a link on your site, like this:
+
+<a href="https://jsonfeed.org/feed.json"><img src="https://jsonfeed.org/graphics/icon.png" /></a>
+
+(The authors thank [Craig Hockenberry](http://furbo.org/) for the icon.)
 
 This spec does not address the problem of how to go from clicking a link in a browser to getting a feed added to a feed reader — which, to be fair, may not always be the user intention. And of course a feed reader may be a local app or a web app.
 
