@@ -227,7 +227,7 @@ Publishers are encouraged to provide a link to their JSON Feed — as they do w
 
 You can also the JSON Feed icon as a link on your site, like this:
 
-<a href="https://jsonfeed.org/feed.json"><img src="https://jsonfeed.org/graphics/icon.png" /></a>
+<div class="feedicon"><a href="https://jsonfeed.org/feed.json"><img src="https://jsonfeed.org/graphics/icon.png" /></a></div>
 
 (The authors thank [Craig Hockenberry](http://furbo.org/) for the icon.)
 

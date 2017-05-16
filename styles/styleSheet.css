@@ -107,7 +107,7 @@ pre {
 #footer p {
 	margin-bottom: 18px;
 }
-#footer div.feedicon img {
+.feedicon img {
 	border-radius: 6px;
 	width: 70px;
 	height: 70px;
