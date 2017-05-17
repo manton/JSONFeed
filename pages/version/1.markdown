@@ -3,8 +3,6 @@
 
 <span id="byline">by <a href="http://inessential.com/">Brent Simmons</a> and <a href="http://manton.org/">Manton Reece</a></a>
 
-(This page is in progress — please don’t pass this link around just yet. Thanks! -Brent)
-
 The JSON Feed format is a pragmatic syndication format, like [RSS](http://cyber.harvard.edu/rss/rss.html) and [Atom](https://tools.ietf.org/html/rfc4287), but with one big difference: it’s JSON instead of XML.
 
 For most developers, JSON is *far* easier to read and write than XML. Developers may groan at picking up an XML parser, but decoding JSON is often just a single line of code.
