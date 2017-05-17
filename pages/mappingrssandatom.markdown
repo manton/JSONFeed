@@ -49,6 +49,8 @@ Unlike RSS's `channel` element, Atom puts many of the elements to describe a fee
 
 * Atom has `subtitle` and `id` elements. There is no mapping for these in JSON Feed, although `description` in JSON could be used instead of `subtitle`.
 
+* For WebSub, Atom uses `link` elements with `rel="hub"`. JSON Feed has a dedicated `hubs` array.
+
 ### Entry
 
 Atom has an array of `entry` objects. In JSON Feed these are `item` objects.
