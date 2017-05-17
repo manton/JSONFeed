@@ -283,14 +283,14 @@ Also note while there is just one attachment, there could be several.
 		"author": {
 			"name": "Brent Simmons",
 			"url": "http://example.org/",
-			"avatar": "https://example.org/avatar.png",
+			"avatar": "https://example.org/avatar.png"
 		},
 		"items": [
 			{
 				"id": "2347259",
 				"url": "https://example.org/2347259",
 				"content_text": "Cats are neat. \n\nhttps://example.org/cats",
-				"date_published": "2016-02-09T14:22:00-07:00"dodo
+				"date_published": "2016-02-09T14:22:00-07:00"
 			}
 		]
 	}
