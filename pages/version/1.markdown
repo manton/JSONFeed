@@ -225,7 +225,7 @@ However, we realize that there are reasons — both technical and matters of pre
 
 Publishers are encouraged to provide a link to their JSON Feed — as they do with RSS and Atom feeds — on their websites. It’s okay to make the link text “JSON Feed,” but a more specific title is also okay.
 
-You can also the JSON Feed icon as a link on your site, like this:
+You can also use the JSON Feed icon as a link on your site, like this:
 
 	<div class="feedicon"><a href="https://jsonfeed.org/feed.json"><img src="https://jsonfeed.org/graphics/icon.png" /></a></div>
 
