@@ -81,7 +81,7 @@ After that there’s an array of objects — `items` — that describe each obj
 
     * `url` (optional, string) is the URL of a site owned by the author. It could be a blog, micro-blog, Twitter account, and so on. Ideally the linked-to page provides a way to contact the author, but that’s not required. The URL could be a mailto: link, though we suspect that will be rare.
 
-    * `avatar` (optional, object) is the URL for an image for the author. As with `icon`, it should be square and relatively large — such as 512 x 512 — and should use transparency where appropriate, since it may be rendered on a non-white background.
+    * `avatar` (optional, string) is the URL for an image for the author. As with `icon`, it should be square and relatively large — such as 512 x 512 — and should use transparency where appropriate, since it may be rendered on a non-white background.
 
 * `expired` (optional, boolean) says whether or not the feed is finished — that is, whether or not it will ever update again. A feed for a temporary event, such as an instance of the Olympics, could expire. If the value is `true`, then it’s expired. Any other value, or the absence of `expired`, means the feed may continue to update.
 
