@@ -306,9 +306,10 @@ There are some JSON Feeds on the web:
 * [Maybe Pizza?](http://maybepizza.com/feed.json)
 * [Daring Fireball](https://daringfireball.net/feeds/json)
 * [Hypercritical](http://hypercritical.co/feeds/main.json)
-* [Manton Reece](https://manton.micro.blog/feed.json)
-* [Timetable](http://timetable.manton.org/feed.json) (podcast)
 * [inessential](http://inessential.com/feed.json)
+* [Manton Reece](https://manton.org/feed/json)
+* [Micro.blog timeline](https://micro.blog/feeds/manton.json)
+* [Timetable](http://timetable.manton.org/feed.json) (podcast)
 * [The Record](http://therecord.co/feed.json) (podcast)
 
 In addition, this website has its own [JSON Feed](https://jsonfeed.org/feed.json).
