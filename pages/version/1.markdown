@@ -217,7 +217,7 @@ This is the same as the feed discovery mechanism used for RSS and Atom.
 
 The `title` attribute is optional, but can be useful to differentiate multiple feeds — for instance, there might be a feed for all blog posts and a feed for comments on a specific post. These should have different titles.
 
-In an ideal world, manual discovery — by a human using a web browser — is also possible, by adding `feed.json` to the resource the feed describes. If there’s a blog at `https://example.org/blog/`, then a human could try `https://example.org/blog/feed.json` to find the feed.
+In an ideal world, manual discovery — by a human using a web browser — is also possible, by adding `feed.json` to the resource the feed describes. If there’s a blog at `https://example.org/`, then a human could try <code>https://example.org/&#8203;feed.json</code> to find the feed.
 
 However, we realize that there are reasons — both technical and matters of preference — that prevent this from being universal, which is fine. But still, if you can do this, it would be nice.
 
