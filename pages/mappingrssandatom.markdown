@@ -44,7 +44,9 @@ RSS has an array of `item` objects, and so does JSON Feed.
 Unlike RSS's `channel` element, Atom puts many of the elements to describe a feed at the top level of the document, just like JSON Feed.
 
 * Atom's `title` maps directly to JSON Feed.
+
 * Atom uses `link` elements to show the relationship between the feed and other URLs. Without a `rel` attribute, or with `rel="alternate"`, Atom's `link` is equivalent to JSON Feed's `home_page_url`. With `rel="self"`, it maps to JSON Feed's `feed_url`.
+
 * Atom has `subtitle` and `id` elements. There is no mapping for these in JSON Feed, although `description` in JSON could be used instead of `subtitle`.
 
 ### Entry
@@ -52,8 +54,13 @@ Unlike RSS's `channel` element, Atom puts many of the elements to describe a fee
 Atom has an array of `entry` objects. In JSON Feed these are `item` objects.
 
 * Atom's `title`, `id`, and `summary` map directly to JSON. In JSON, however, `title` and `summary` are always plain text.
+
 * Atom uses a content's `type` attribute to declare whether the text is plain text or HTML. `type="html"` or `type="xhtml"` in an Atom feed maps to `content_html` in JSON. `type="text"` maps to `content_text` in JSON.
+
 * `link` with `rel="alternate"` maps to `url` in JSON. If `rel="related"` is used for links to an external site, in JSON Feed those map to `external_url`.
+
 * The `author` element contains `name`, `uri`, and `email`, while in JSON Feed it's an object with `name`, `url`, and `avatar` values.
+
 * Atom's `published` and `updated` dates map to `date_published` and `date_modified` in JSON. Both Atom and JSON Feed use the same date format.
+
 * Atom's `link` with `rel="enclosure"` maps to `attachments` in JSON Feed. An Atom enclosure has attributes `href`, `length`, and `type`, and the JSON Feed attachment object has corresponding elements `url`, `size_in_bytes`, and `mime_type`. JSON Feed adds `title` and `duration_in_seconds`.
