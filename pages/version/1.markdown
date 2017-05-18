@@ -175,7 +175,7 @@ In future versions, defined keys will always adhere to these rules:
 
 ## Suggestions for Publishers
 
-JSON Feed files must be served using the MIME type — `application/feed+json`.
+JSON Feed files must be served using the MIME type `application/feed+json`.
 
 The number of items in a feed is unlimited, but practical limits should be observed. A 1MB feed places a burden on feed readers, especially if there are many such feeds. Under 100K is ideal, and 250K is fine. Use your judgment. If you need to provide older items, consider using pagination and `next_url`.
 
