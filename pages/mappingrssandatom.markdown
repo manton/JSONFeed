@@ -31,7 +31,7 @@ RSS has an array of `item` objects, and so does JSON Feed.
 
 * The `author` element is a single value, while in JSON Feed it’s an object with `name`, `url`, and `avatar` values.
 
-* `pubDate` maps to `date_published`, but this date and others in JSON Feed use a different format, the ISO 8601 format. (Example: `2010-02-07T14:04:00-05:00`.)
+* `pubDate` maps to `date_published`, but this date and others in JSON Feed use a different format, the RFC 3339 format. (Example: `2010-02-07T14:04:00-05:00`.)
 
 * `enclosure` maps to `attachments` — but JSON Feed allows for multiple attachments. An RSS `enclosure` has attributes `url`, `length`, and `type`, and the JSON Feed attachment object has corresponding elements `url`, `size_in_bytes`, and `mime_type`. JSON Feed adds `title` and `duration_in_seconds`.
 
