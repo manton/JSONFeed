@@ -8,5 +8,6 @@
 * [JSON Feed for Jekyll](https://github.com/vallieres/jekyll-json-feed) by Alexandre Vallières-Lagacé
 * [Jekyll feed with attachments](https://github.com/tedchoward/tidbits/blob/master/feed.json) by Ted Howard
 * [Movable Type template and EscapeForJSON](https://daringfireball.net/projects/mt-escapeforjson/) by John Gruber
+* [Element API for Craft CMS](https://github.com/craftcms/element-api/tree/v1) by Pixel & Tonic
 
 As more code is published, by us and others, we’ll add to this page.
