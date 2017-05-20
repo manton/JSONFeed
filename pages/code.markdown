@@ -3,6 +3,7 @@
 
 * [WordPress plugin](https://github.com/manton/jsonfeed-wp) by Manton Reece
 * [Swift parsing library](https://github.com/totocaster/JSONFeed) by Toto Tvalavadze
+* [Swift parsing library](https://github.com/wesbillman/JSONFeed) by Wes Billman
 * [Go package](https://github.com/st3fan/jsonfeed) by Stefan Arentz
 * [Jekyll feed template](https://github.com/vallieres/jekyll-json-feed) by Alexandre Vallières-Lagacé
 * [Jekyll feed with attachments](https://github.com/tedchoward/tidbits/blob/master/feed.json) by Ted Howard
@@ -10,5 +11,8 @@
 * [Movable Type template and EscapeForJSON](https://daringfireball.net/projects/mt-escapeforjson/) by John Gruber
 * [Craft CMS with Element API](https://github.com/craftcms/element-api/tree/v1#json-feed) by Pixel & Tonic
 * [Rust crate](https://crates.io/crates/jsonfeed) by Paul Woolcock
+* [Python feed validator](https://github.com/voidfiles/jsonfeedvalidator) by Alex Kessinger
+* [Ruby feedparser gem](http://www.rubyflow.com/p/a57is4-added-new-json-feed-jsonfeed-format-to-the-universal-feedparser-gem) support added by Gerald Bauer
+* [RSS to JSON Feed converter](https://github.com/appsattic/feed2json) and [web service](https://feed2json.now.sh) by Andrew Chilton
 
 As more code is published, by us and others, we’ll add to this page.
