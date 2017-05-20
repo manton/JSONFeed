@@ -9,6 +9,6 @@
 * [Movable Type template](https://gist.github.com/walt/8da71fead3b8ba321f91efd954f0cb32) by Walt Grayson
 * [Movable Type template and EscapeForJSON](https://daringfireball.net/projects/mt-escapeforjson/) by John Gruber
 * [Craft CMS with Element API](https://github.com/craftcms/element-api/tree/v1#json-feed) by Pixel & Tonic
-* [Rust library](https://crates.io/crates/jsonfeed) by Paul Woolcock
+* [Rust crate](https://crates.io/crates/jsonfeed) by Paul Woolcock
 
 As more code is published, by us and others, we’ll add to this page.
