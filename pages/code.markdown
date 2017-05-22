@@ -14,5 +14,6 @@
 * [Python feed validator](https://github.com/voidfiles/jsonfeedvalidator) by Alex Kessinger
 * [Ruby feedparser gem](http://www.rubyflow.com/p/a57is4-added-new-json-feed-jsonfeed-format-to-the-universal-feedparser-gem) support added by Gerald Bauer
 * [RSS/Atom to JSON Feed converter](https://github.com/appsattic/feed2json.org) and [web service](https://feed2json.org) by Andrew Chilton
+* [Laravel JSON Feed Generator](https://github.com/mateusjatenee/laravel-json-feed) 
 
 As more code is published, by us and others, we’ll add to this page.
