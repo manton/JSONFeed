@@ -18,5 +18,6 @@
 * [Ruby feedparser gem](http://www.rubyflow.com/p/a57is4-added-new-json-feed-jsonfeed-format-to-the-universal-feedparser-gem) support added by Gerald Bauer
 * [RSS/Atom to JSON Feed converter](https://github.com/appsattic/feed2json.org) and [web service](https://feed2json.org) by Andrew Chilton
 * [Laravel JSON Feed Generator](https://github.com/mateusjatenee/laravel-json-feed) by Mateus Guimarães
+* [Pelican plugin](https://github.com/andrewheiss/pelican_json_feed) by Andrew Heiss
 
 As more code is published, by us and others, we’ll add to this page.
