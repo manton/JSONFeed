@@ -19,5 +19,6 @@
 * [RSS/Atom to JSON Feed converter](https://github.com/appsattic/feed2json.org) and [web service](https://feed2json.org) by Andrew Chilton
 * [Laravel JSON Feed Generator](https://github.com/mateusjatenee/laravel-json-feed) by Mateus Guimarães
 * [Metalsmith plugin](https://github.com/bensmithett/metalsmith-json-feed) by Ben Smithett
+* [Pelican plugin](https://github.com/andrewheiss/pelican_json_feed) by Andrew Heiss
 
 As more code is published, by us and others, we’ll add to this page.
