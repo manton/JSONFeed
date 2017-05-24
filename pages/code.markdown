@@ -20,5 +20,6 @@
 * [PHP JSON Feed Generator](https://github.com/mateusjatenee/php-json-feed) by Mateus Guimarães
 * [Metalsmith plugin](https://github.com/bensmithett/metalsmith-json-feed) by Ben Smithett
 * [Pelican plugin](https://github.com/andrewheiss/pelican_json_feed) by Andrew Heiss
+* [C# parsing library](https://github.com/gramgibson/jsonfeed) by Gram Gibson
 
 As more code is published, by us and others, we’ll add to this page.
