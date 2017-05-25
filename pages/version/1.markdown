@@ -129,11 +129,11 @@ An individual item may have one or more attachments.
 
     * `size_in_bytes` (optional, number) specifies how large the file is.
 
-    * `duration_in_seconds` (optional, number) specifies how long the attachment takes to listen to or watch.
+    * `duration_in_seconds` (optional, number) specifies how long it takes to listen to or watch, when played at normal speed.
 
 ## Extensions <a name="extensions"></a>
 
-Publishers can use custom objects in JSON Feeds. Names must start with an `_` character and be followed by a letter. Custom objects can appear anywhere in a feed.
+Publishers can use custom objects in JSON Feeds. Names must start with an `_` character followed by a letter. Custom objects can appear anywhere in a feed.
 
 For instance, imagine a podcast directory service — call it Blue Shed Podcasts — that asks a podcaster to specify some additional information about a feed or item. A publisher would do something like this:
 
@@ -270,7 +270,7 @@ The below examples have just one item, for the sake of brevity in illustration. 
 
 Note that it uses both `content_text` and `content_html`, which is completely valid. An app such as iTunes, for instance, might prefer to use `content_text`, while a feed reader might prefer `content_html`.
 
-Also note while there is just one attachment, there could be several.
+Also note while there is just one attachment in this example, there could be several.
 
 ### Microblog <a name="microblog"></a>
 
