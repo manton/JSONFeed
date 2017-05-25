@@ -22,5 +22,6 @@
 * [Pelican plugin](https://github.com/andrewheiss/pelican_json_feed) by Andrew Heiss
 * [Pelican feed template](https://github.com/andrewheiss/athpelican/blob/master/theme/templates/feed.json) by Andrew Heiss
 * [C# parsing library](https://github.com/gramgibson/jsonfeed) by Gram Gibson
+* [JSON Feed Viewer](https://json-feed-viewer.herokuapp.com/) by Maxime Vaillancourt
 
 As more code is published, by us and others, we’ll add to this page.
