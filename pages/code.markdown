@@ -23,5 +23,6 @@
 * [Pelican feed template](https://github.com/andrewheiss/athpelican/blob/master/theme/templates/feed.json) by Andrew Heiss
 * [C# parsing library](https://github.com/gramgibson/jsonfeed) by Gram Gibson
 * [C# parsing & generator library](https://github.com/DanRigby/JsonFeed.NET) by Dan Rigby
+* [JSON schema for JSON feeds](https://github.com/sonicdoe/jsonfeed-schema) by Jakob Krigovsky
 
 As more code is published, by us and others, we’ll add to this page.
