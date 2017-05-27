@@ -179,7 +179,7 @@ JSON Feed files must be served using the same MIME type — `application/json` �
 
 The number of items in a feed is unlimited, but practical limits should be observed. A 1MB feed places a burden on feed readers, especially if there are many such feeds. Under 100K is ideal, and 250K is fine. Use your judgment. If you need to provide older items, consider using pagination and `next_url`.
 
-Publishers should support [Conditional GET](https://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers/), to limit impact on their system when feed readers poll for changes.
+Publishers should support standard [HTTP cache validation (RFC 7234, section 4.3.2)](https://tools.ietf.org/html/rfc7234#section-4.3.2), to limit impact on their own and the subscribers systems when feed readers poll for changes.
 
 Also, to further reduce bandwidth use, publishers should provide the top-level `icon` and `favicon` URLs. When not present, feed readers will often attempt to find these things by 1) downloading the home page and scraping the HTML, and 2) making one or more requests to likely locations for these images. To reduce traffic on your server, put this info in the feed.
 
@@ -201,7 +201,7 @@ That said, there is one thing we insist on: any `item` without an `id` must be d
 
 For web-based feed readers, it would be helpful to publishers if you reported your subscription numbers. To do this, add a substring of the form `(n subscribers)`, where n is the actual number, to the user-agent header in your http and https requests.
 
-Feed readers are strongly advised to use [Conditional GET](https://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers/), in order to minimize bandwidth and CPU cycles on clients and servers.
+Feed readers are strongly advised to use [HTTP cache validation (RFC 7234, section 4.3.1)](https://tools.ietf.org/html/rfc7234#section-4.3.1), in order to minimize bandwidth and CPU cycles on clients and servers.
 
 On the issue of which URL to use — `url` or `external_url` — when opening a web page: because an item’s `url` is always a permalink, the `url` should be the default. For linkblogs that include an `external_url`, feed readers may give users a choice which URL to open: perhaps by displaying the `external_url` prominently in the UI, perhaps by a preference to use these URLs when present, or by some other mechanism.
 
