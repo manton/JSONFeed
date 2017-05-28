@@ -138,7 +138,7 @@ Publishers can use custom objects in JSON Feeds. Names must start with an `_` ch
 For instance, imagine a podcast directory service — call it Blue Shed Podcasts — that asks a podcaster to specify some additional information about a feed or item. A publisher would do something like this:
 
 	"_blue_shed": {
-		"about": "https://blueshed-podcasts.com/json-feed-extension-docs"
+		"about": "https://blueshed-podcasts.com/json-feed-extension-docs",
 		"explicit": false,
 		"copyright": "1948 by George Orwell",
 		"owner": "Big Brother and the Holding Company",
