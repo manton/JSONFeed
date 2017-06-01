@@ -39,14 +39,14 @@ h3 {
 	border-bottom: 1px solid #ccc;
 	color #999;
 	margin-bottom: 1em;
-	background-color: #8BE028;
+	background-color: #7DD93E;
 	width: 100%;
 	font-family: "SF Mono", Menlo, "Courier", monospace;
 	font-size: 2em;
 	line-height: 3em;
 }
 #banner a:link, #banner a:visited {
-	color: #497614;
+	color: #3F6B1E;
 	text-decoration: none;
 }
 #banner div.title {
