@@ -2,6 +2,7 @@
 # Code
 
 * [WordPress plugin](https://github.com/manton/jsonfeed-wp) by Manton Reece
+* [Drupal module](https://www.drupal.org/project/json_feed) by Karl Shea
 * [Swift parsing library](https://github.com/totocaster/JSONFeed) by Toto Tvalavadze
 * [Swift parsing library](https://github.com/wesbillman/JSONFeed) by Wes Billman
 * [Go package](https://github.com/st3fan/jsonfeed) by Stefan Arentz
