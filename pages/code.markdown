@@ -4,6 +4,7 @@
 * [WordPress plugin](https://github.com/manton/jsonfeed-wp) by Manton Reece
 * [Swift parsing library](https://github.com/totocaster/JSONFeed) by Toto Tvalavadze
 * [Swift parsing library](https://github.com/wesbillman/JSONFeed) by Wes Billman
+* [Objective-C parsing library](https://github.com/DreamingInBinary/JSONFeed) by Jordan Morgan
 * [Go package](https://github.com/st3fan/jsonfeed) by Stefan Arentz
 * [Go package](https://github.com/kr/jsonfeed) by Keith Rarick
 * [Jekyll feed template](https://github.com/vallieres/jekyll-json-feed) by Alexandre Vallières-Lagacé
