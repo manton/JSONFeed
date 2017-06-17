@@ -93,7 +93,7 @@ After that there’s an array of objects — `items` — that describe each obj
 
 * `id` (required, string) is unique for that item for that feed over time. If an item is ever updated, the `id` should be unchanged. New items should never use a previously-used `id`. If an `id` is presented as a number or other type, a JSON Feed reader must coerce it to a string. Ideally, the `id` is the full URL of the resource described by the item, since URLs make great unique identifiers.
 
-* `url` (optional, string) is the URL of the resource described by the item. It’s the permalink. This may be the same as the `id` — but should be present regardless. 
+* `url` (optional, string) is the URL of the resource described by the item. It’s the permalink. This may be the same as the `id` — but should be present regardless.
 
 * `external_url` (very optional, string) is the URL of a page elsewhere. This is especially useful for linkblogs. If `url` links to where you’re talking about a thing, then `external_url` links to the thing you’re talking about.
 
@@ -310,6 +310,7 @@ There are some JSON Feeds on the web:
 * [Timetable](http://timetable.manton.org/feed.json) (podcast)
 * [The Record](http://therecord.co/feed.json) (podcast)
 * [Allen Pike](http://www.allenpike.com/feed.json)
+* [bogdanvlviv (Bogdan)](https://bogdanvlviv.github.io/feed.json)
 
 In addition, this website has its own [JSON Feed](https://jsonfeed.org/feed.json).
 
