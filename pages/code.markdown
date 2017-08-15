@@ -25,6 +25,7 @@
 * [C# parsing library](https://github.com/gramgibson/jsonfeed) by Gram Gibson
 * [C# parsing & generator library](https://github.com/DanRigby/JsonFeed.NET) by Dan Rigby
 * [Crystal parser & generator library](https://github.com/DougEverly/jsonfeed.cr) by Doug Everly
+* [Scala parser & generator library](https://github.com/chobeat/scala-json-feed) by Simone Robutti
 
 
 As more code is published, by us and others, we’ll add to this page.
