@@ -111,7 +111,7 @@ After that there’s an array of objects — `items` — that describe each obj
 
 * `date_modified` (optional, string) specifies the modification date in RFC 3339 format.
 
-* `author` (optional, object) has the same structure as the top-level `author`. If not specified in an item, then the top-level `author`, if present, is the author of the item.
+* `authors` (optional, array of objects) or `author` (optional, object) specifies the item author(s). Each object is the same structure as the top-level `author`. If `authors` and `author` are not specified in an item, then the top-level `author`, if present, is the author of the item. If both `authors` and `author` are specified in an item, `author` is ignored.
 
 * `tags` (optional, array of strings) can have any plain text values you want. Tags tend to be just one word, but they may be anything. Note: they are not the equivalent of Twitter hashtags. Some blogging systems and other feed formats call these categories.
 
