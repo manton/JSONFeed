@@ -26,6 +26,7 @@
 * [C# parsing & generator library](https://github.com/DanRigby/JsonFeed.NET) by Dan Rigby
 * [Crystal parser & generator library](https://github.com/DougEverly/jsonfeed.cr) by Doug Everly
 * [JS JSON Feed to Atom converter](https://github.com/bcomnes/jsonfeed-to-atom) by Bret Comnes
+* [JS JSON Feed to RSS converter](https://github.com/bcomnes/jsonfeed-to-rss) (with full Apple Podcast support) by Bret Comnes
 
 
 As more code is published, by us and others, we’ll add to this page.
