@@ -29,5 +29,6 @@
 * [Scala parser & generator library](https://github.com/chobeat/scala-json-feed) by Simone Robutti
 * [Java parsing library](https://github.com/devilgate/pertwee) by Martin McCallion
 * [JS JSON Feed to Atom converter](https://github.com/bcomnes/jsonfeed-to-atom) by Bret Comnes
+* [Perl5 JSON::Feed parser and generator](https://metacpan.org/pod/JSON::Feed) by Kang-min Liu
 
 As more code is published, by us and others, we’ll add to this page.
