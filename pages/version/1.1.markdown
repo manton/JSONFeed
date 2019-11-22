@@ -139,6 +139,8 @@ An individual item may have one or more attachments.
 
 JSON Feed version 1 specified a singular `author` field instead of the `authors` array used in version 1.1. New feeds should use `authors`, even if only 1 author is needed. Existing feeds can include both `author` and `authors` for compatibility with existing feed readers. Feed readers should always prefer `authors` if present.
 
+Deprecated items remain valid forever, but you should move to the new fields when you can. A feed using fields from JSON Feed 1.0 is still a valid feed for version 1.1 and future versions of JSON Feed.
+
 ## Extensions <a name="extensions"></a>
 
 Publishers can use custom objects in JSON Feeds. Names must start with an `_` character followed by a letter. Custom objects can appear anywhere in a feed.
