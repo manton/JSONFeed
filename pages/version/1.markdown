@@ -107,9 +107,9 @@ After that there’s an array of objects — `items` — that describe each obj
 
 * `banner_image` (optional, string) is the URL of an image to use as a banner. Some blogging systems (such as [Medium](https://medium.com/)) display a different banner image chosen to go with each post, but that image wouldn’t otherwise appear in the `content_html`. A feed reader with a detail view may choose to show this banner image at the top of the detail view, possibly with the title overlaid.
 
-* `date_published` (optional, string) specifies the date in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. (Example: `2010-02-07T14:04:00-05:00`.)
+* `date_published` (optional, string) specifies the date when the item was created, in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. Example: `2010-02-07T14:04:00-05:00`.
 
-* `date_modified` (optional, string) specifies the modification date in RFC 3339 format.
+* `date_modified` (optional, string) specifies the date when the item was last modified, in RFC 3339 format.
 
 * `author` (optional, object) has the same structure as the top-level `author`. If not specified in an item, then the top-level `author`, if present, is the author of the item.
 
@@ -193,7 +193,9 @@ If a feed is invalid JSON, then we strongly recommend not attempting to parse it
 
 There are cases, though, where a required element might not be present. In the case of an `attachment` missing a `mime_type`, you can probably deal with it fine. After all, when you download the attached file, the web browser will provide a MIME type. (And you might have been able to guess it from the file suffix.)
 
-Another case might be a malformed `date_published` that you can’t parse. You might substitute the date the reader parsed it. (Feed readers have been doing that kind of thing for many years, for bad or missing dates.)
+Another case might be a malformed `date_published` that you can’t parse. You might use the part of the date your parser _could_ recognize, or substitute it with an arbitrary value. Feed readers have been doing that kind of thing for many years, for bad or missing dates.
+
+If an item has a `date_modified` but not a `date_published`, then readers should use the `date_modified` field and may assume it's also the item creation date.
 
 As much as we’d like to encourage good feeds, we also emphasize that this is a pragmatic format, and the final test is user experience: if an error can be recovered from without significantly harming that experience, then it’s better than just refusing to use the feed (or part of the feed) at all.
 
