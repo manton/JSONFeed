@@ -12,7 +12,7 @@ Our hope is that, because of the lightness of JSON and simplicity of the JSON Fe
 Here’s a simple example:
 
 	{
-		"version": "https://jsonfeed.org/version/1",
+		"version": "https://jsonfeed.org/version/1.1",
 		"title": "My Example Feed",
 		"home_page_url": "https://example.org/",
 		"feed_url": "https://example.org/feed.json",
@@ -70,8 +70,6 @@ After that there’s an array of objects — `items` — that describe each obje
 * `user_comment` (optional, string) is a description of the purpose of the feed. This is for the use of people looking at the raw JSON, and should be ignored by feed readers.
 
 * `next_url` (optional, string) is the URL of a feed that provides the next n items, where n is determined by the publisher. This allows for pagination, but with the expectation that reader software is not required to use it and probably won’t use it very often. `next_url` must not be the same as `feed_url`, and it must not be the same as a previous `next_url` (to avoid infinite loops).
-
-* `previous_url` (optional, string) is the URL of a feed that provides the previous n items in a paginated feed, complementing `next_url`. Because feeds often contain items in reverse-chronological order, `previous_url` references items that are usually _forward_ in time. They could be newer than the items at `feed_url` and `next_url`.
 
 * `icon` (optional, string) is the URL of an image for the feed suitable to be used in a timeline, much the way an avatar might be used. It should be square and relatively large — such as 512 x 512 — so that it can be scaled-down and so that it can look good on retina displays. It should use transparency where appropriate, since it may be rendered on a non-white background.
 
@@ -256,7 +254,7 @@ The below examples have just one item, for the sake of brevity in illustration. 
 ### Podcast <a name="podcast"></a>
 
 	{
-		"version": "https://jsonfeed.org/version/1",
+		"version": "https://jsonfeed.org/version/1.1",
 		"user_comment": "This is a podcast feed. You can add this feed to your podcast client using the following URL: http://therecord.co/feed.json",
 		"title": "The Record",
 		"home_page_url": "http://therecord.co/",
@@ -289,7 +287,7 @@ Also note while there is just one attachment in this example, there could be sev
 ### Microblog <a name="microblog"></a>
 
 	{
-		"version": "https://jsonfeed.org/version/1",
+		"version": "https://jsonfeed.org/version/1.1",
 		"user_comment": "This is a microblog feed. You can add this to your feed reader using the following URL: https://example.org/feed.json",
 		"title": "Brent Simmons’s Microblog",
 		"home_page_url": "https://example.org/",
@@ -339,7 +337,7 @@ The authors thank the following people for their extensive contributions and rev
 
 ## Changes <a name="changes"></a>
 
-Version 1.1 — 12/x/2019:
+Version 1.1 — 2/14/2020:
 
 * Updated to use more specific `application/feed+json` MIME type.
 * Added `authors` field to allow more than 1 author per feed or item. Deprecated `author`.
