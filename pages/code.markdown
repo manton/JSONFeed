@@ -30,5 +30,6 @@
 * [Java parsing library](https://github.com/devilgate/pertwee) by Martin McCallion
 * [JS JSON Feed to Atom converter](https://github.com/bcomnes/jsonfeed-to-atom) by Bret Comnes
 * [Perl5 JSON::Feed parser and generator](https://metacpan.org/pod/JSON::Feed) by Kang-min Liu
+* [JSON feed in Jinja](https://gist.github.com/ckunte/162a0c890d3c98c37e704a9c5664356d) by Chetan Kunte
 
 As more code is published, by us and others, we’ll add to this page.
