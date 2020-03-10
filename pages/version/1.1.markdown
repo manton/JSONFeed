@@ -83,7 +83,7 @@ After that there’s an array of objects — `items` — that describe each obje
 
     * `avatar` (optional, string) is the URL for an image for the author. As with `icon`, it should be square and relatively large — such as 512 x 512 — and should use transparency where appropriate, since it may be rendered on a non-white background.
 
-* `language` (optional, string) is the primary language for the feed in the format specified in [RFC 5646](https://tools.ietf.org/html/rfc5646). The value is usually a 2-digit language tag from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), optionally followed by a region tag. (Examples: `en` or `en-US`.)
+* `language` (optional, string) is the primary language for the feed in the format specified in [RFC 5646](https://tools.ietf.org/html/rfc5646). The value is usually a 2-letter language tag from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), optionally followed by a region tag. (Examples: `en` or `en-US`.)
 
 * `expired` (optional, boolean) says whether or not the feed is finished — that is, whether or not it will ever update again. A feed for a temporary event, such as an instance of the Olympics, could expire. If the value is `true`, then it’s expired. Any other value, or the absence of `expired`, means the feed may continue to update.
 
