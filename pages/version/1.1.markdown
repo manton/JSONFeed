@@ -71,9 +71,9 @@ After that there’s an array of objects — `items` — that describe each obje
 
 * `next_url` (optional, string) is the URL of a feed that provides the next n items, where n is determined by the publisher. This allows for pagination, but with the expectation that reader software is not required to use it and probably won’t use it very often. `next_url` must not be the same as `feed_url`, and it must not be the same as a previous `next_url` (to avoid infinite loops).
 
-* `icon` (optional, string) is the URL of an image for the feed suitable to be used in a timeline, much the way an avatar might be used. It should be square and relatively large — such as 512 x 512 — so that it can be scaled-down and so that it can look good on retina displays. It should use transparency where appropriate, since it may be rendered on a non-white background.
+* `icon` (optional, string) is the URL of an image for the feed suitable to be used in a timeline, much the way an avatar might be used. It should be square and relatively large — such as 512 x 512 pixels — so that it can be scaled-down and so that it can look good on retina displays. It should use transparency where appropriate, since it may be rendered on a non-white background.
 
-* `favicon` (optional, string) is the URL of an image for the feed suitable to be used in a source list. It should be square and relatively small, but not smaller than 64 x 64 (so that it can look good on retina displays). As with `icon`, this image should use transparency where appropriate, since it may be rendered on a non-white background.
+* `favicon` (optional, string) is the URL of an image for the feed suitable to be used in a source list. It should be square and relatively small, but not smaller than 64 x 64 pixels (so that it can look good on retina displays). As with `icon`, this image should use transparency where appropriate, since it may be rendered on a non-white background.
 
 * `authors` (optional, array of objects) specifies one or more feed authors. The author object has several members. These are all optional — but if you provide an author object, then at least one is required:
 
@@ -81,7 +81,7 @@ After that there’s an array of objects — `items` — that describe each obje
 
     * `url` (optional, string) is the URL of a site owned by the author. It could be a blog, micro-blog, Twitter account, and so on. Ideally the linked-to page provides a way to contact the author, but that’s not required. The URL could be a mailto: link, though we suspect that will be rare.
 
-    * `avatar` (optional, string) is the URL for an image for the author. As with `icon`, it should be square and relatively large — such as 512 x 512 — and should use transparency where appropriate, since it may be rendered on a non-white background.
+    * `avatar` (optional, string) is the URL for an image for the author. As with `icon`, it should be square and relatively large — such as 512 x 512 pixels — and should use transparency where appropriate, since it may be rendered on a non-white background.
 
 * `language` (optional, string) is the primary language for the feed in the format specified in [RFC 5646](https://tools.ietf.org/html/rfc5646). The value is usually a 2-letter language tag from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), optionally followed by a region tag. (Examples: `en` or `en-US`.)
 
