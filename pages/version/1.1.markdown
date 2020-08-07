@@ -337,7 +337,7 @@ The authors thank the following people for their extensive contributions and rev
 
 ## Changes <a name="changes"></a>
 
-Version 1.1 — 2/14/2020:
+Version 1.1 — 8/7/2020:
 
 * Updated to use more specific `application/feed+json` MIME type.
 * Added `authors` field to allow more than 1 author per feed or item. Deprecated `author`.
