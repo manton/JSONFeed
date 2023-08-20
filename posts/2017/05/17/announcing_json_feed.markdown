@@ -9,7 +9,7 @@ So we developed JSON Feed, a format similar to [RSS](http://cyber.harvard.edu/rs
 
 #### Notes
 
-We have a [WordPress plugin](https://github.com/manton/jsonfeed-wp) and, coming soon, a JSON Feed Parser for Swift. As more code is written, by us and others, we’ll update the [code](https://jsonfeed.org/code) page.
+We have a [WordPress plugin](https://github.com/manton/jsonfeed-wp) and, in the future, a JSON Feed Parser for Swift. Unofficial Swift parsers, and JSON Feed tools for other languages and platforms, are available on [the code page](https://jsonfeed.org/code).
 
 See [Mapping RSS and Atom to JSON Feed](https://jsonfeed.org/mappingrssandatom) for more on the similarities between the formats.
 
