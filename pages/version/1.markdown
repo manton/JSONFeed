@@ -183,7 +183,7 @@ Publishers should support [Conditional GET](https://fishbowl.pastiche.org/2002/1
 
 Also, to further reduce bandwidth use, publishers should provide the top-level `icon` and `favicon` URLs. When not present, feed readers will often attempt to find these things by 1) downloading the home page and scraping the HTML, and 2) making one or more requests to likely locations for these images. To reduce traffic on your server, put this info in the feed.
 
-JSON Feeds should be encoded using UTF-8 — but any encoding that’s [legal JSON](https://www.ietf.org/rfc/rfc4627.txt) is legal for JSON Feeds.
+JSON Feeds should be encoded using UTF-8 — but any encoding that’s [legal JSON](https://tools.ietf.org/html/rfc7159) is legal for JSON Feeds.
 
 Any publisher already publishing RSS and/or Atom should continue to do so. In fact, if you’re trying to decide which format (of RSS, Atom, and JSON Feed) to use, and you can do only one, pick RSS — it’s time-tested, popular, and good.
 
