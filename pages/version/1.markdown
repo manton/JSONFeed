@@ -11,24 +11,26 @@ Our hope is that, because of the lightness of JSON and simplicity of the JSON Fe
 
 Here’s a simple example:
 
-	{
-		"version": "https://jsonfeed.org/version/1",
-		"title": "My Example Feed",
-		"home_page_url": "https://example.org/",
-		"feed_url": "https://example.org/feed.json",
-		"items": [
-			{
-				"id": "2",
-				"content_text": "This is a second item.",
-				"url": "https://example.org/second-item"
-			},
-			{
-				"id": "1",
-				"content_html": "<p>Hello, world!</p>",
-				"url": "https://example.org/initial-post"
-			}
-		]
-	}
+```json
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "My Example Feed",
+    "home_page_url": "https://example.org/",
+    "feed_url": "https://example.org/feed.json",
+    "items": [
+        {
+            "id": "2",
+            "content_text": "This is a second item.",
+            "url": "https://example.org/second-item"
+        },
+        {
+            "id": "1",
+            "content_html": "<p>Hello, world!</p>",
+            "url": "https://example.org/initial-post"
+        }
+    ]
+}
+```
 
 It supports more than just the above, of course.
 
@@ -137,13 +139,15 @@ Publishers can use custom objects in JSON Feeds. Names must start with an `_` ch
 
 For instance, imagine a podcast directory service — call it Blue Shed Podcasts — that asks a podcaster to specify some additional information about a feed or item. A publisher would do something like this:
 
-	"_blue_shed": {
-		"about": "https://blueshed-podcasts.com/json-feed-extension-docs",
-		"explicit": false,
-		"copyright": "1948 by George Orwell",
-		"owner": "Big Brother and the Holding Company",
-		"subtitle": "All shouting, all the time. Double. Plus. Good."
-	}
+```json
+"_blue_shed": {
+    "about": "https://blueshed-podcasts.com/json-feed-extension-docs",
+    "explicit": false,
+    "copyright": "1948 by George Orwell",
+    "owner": "Big Brother and the Holding Company",
+    "subtitle": "All shouting, all the time. Double. Plus. Good."
+}
+```
 
 Feed readers that do not understand a given custom object must ignore it.
 
@@ -209,7 +213,9 @@ On the issue of which URL to use — `url` or `external_url` — when opening a 
 
 A web page should include a `link` tag that specifies the location of the JSON Feed. Like this:
 
-	<link rel="alternate" title="My Feed" type="application/json" href="https://example.org/feed.json" />
+```html
+<link rel="alternate" title="My Feed" type="application/json" href="https://example.org/feed.json" />
+```
 
 This is the same as the feed discovery mechanism used for RSS and Atom.
 
@@ -225,7 +231,13 @@ Publishers are encouraged to provide a link to their JSON Feed — as they do w
 
 You can also use the JSON Feed icon as a link on your site, like this:
 
-	<div class="feedicon"><a href="https://jsonfeed.org/feed.json"><img src="https://jsonfeed.org/graphics/icon.png" /></a></div>
+```html
+<div class="feedicon">
+    <a href="https://jsonfeed.org/feed.json">
+        <img src="https://jsonfeed.org/graphics/icon.png" />
+    </a>
+</div>
+```
 
 (The authors thank [Craig Hockenberry](http://furbo.org/) for the icon.)
 
@@ -233,7 +245,9 @@ This spec does not address the problem of how to go from clicking a link in a br
 
 However, the `user_comment` is your chance to tell someone eyeing a bunch of raw JSON in their web browser just what they’re looking at. Here’s an example:
 
-	"user_comment": "This feed allows you to read the posts from this site in any feed reader that supports the JSON Feed format. To add this feed to your reader, copy the following URL — https://example.org/feed.json — and add it your reader."
+```json
+"user_comment": "This feed allows you to read the posts from this site in any feed reader that supports the JSON Feed format. To add this feed to your reader, copy the following URL — https://example.org/feed.json — and add it your reader."
+```
 
 ## More Examples <a name="more-examples"></a>
 
@@ -241,32 +255,34 @@ The below examples have just one item, for the sake of brevity in illustration. 
 
 ### Podcast <a name="podcast"></a>
 
-	{
-		"version": "https://jsonfeed.org/version/1",
-		"user_comment": "This is a podcast feed. You can add this feed to your podcast client using the following URL: http://therecord.co/feed.json",
-		"title": "The Record",
-		"home_page_url": "http://therecord.co/",
-		"feed_url": "http://therecord.co/feed.json",
-		"items": [
-			{
-				"id": "http://therecord.co/chris-parrish",
-				"title": "Special #1 - Chris Parrish",
-				"url": "http://therecord.co/chris-parrish",
-				"content_text": "Chris has worked at Adobe and as a founder of Rogue Sheep, which won an Apple Design Award for Postage. Chris’s new company is Aged & Distilled with Guy English — which shipped Napkin, a Mac app for visual collaboration. Chris is also the co-host of The Record. He lives on Bainbridge Island, a quick ferry ride from Seattle.",
-				"content_html": "Chris has worked at <a href=\"http://adobe.com/\">Adobe</a> and as a founder of Rogue Sheep, which won an Apple Design Award for Postage. Chris’s new company is Aged & Distilled with Guy English — which shipped <a href=\"http://aged-and-distilled.com/napkin/\">Napkin</a>, a Mac app for visual collaboration. Chris is also the co-host of The Record. He lives on <a href=\"http://www.ci.bainbridge-isl.wa.us/\">Bainbridge Island</a>, a quick ferry ride from Seattle.",
-				"summary": "Brent interviews Chris Parrish, co-host of The Record and one-half of Aged & Distilled.",
-				"date_published": "2014-05-09T14:04:00-07:00",
-				"attachments": [
-					{
-						"url": "http://therecord.co/downloads/The-Record-sp1e1-ChrisParrish.m4a",
-						"mime_type": "audio/x-m4a",
-						"size_in_bytes": 89970236,
-						"duration_in_seconds": 6629
-					}
-				]
-			}
-		]
-	}
+```json
+{
+    "version": "https://jsonfeed.org/version/1",
+    "user_comment": "This is a podcast feed. You can add this feed to your podcast client using the following URL: http://therecord.co/feed.json",
+    "title": "The Record",
+    "home_page_url": "http://therecord.co/",
+    "feed_url": "http://therecord.co/feed.json",
+    "items": [
+        {
+            "id": "http://therecord.co/chris-parrish",
+            "title": "Special #1 - Chris Parrish",
+            "url": "http://therecord.co/chris-parrish",
+            "content_text": "Chris has worked at Adobe and as a founder of Rogue Sheep, which won an Apple Design Award for Postage. Chris’s new company is Aged & Distilled with Guy English — which shipped Napkin, a Mac app for visual collaboration. Chris is also the co-host of The Record. He lives on Bainbridge Island, a quick ferry ride from Seattle.",
+            "content_html": "Chris has worked at <a href=\"http://adobe.com/\">Adobe</a> and as a founder of Rogue Sheep, which won an Apple Design Award for Postage. Chris’s new company is Aged & Distilled with Guy English — which shipped <a href=\"http://aged-and-distilled.com/napkin/\">Napkin</a>, a Mac app for visual collaboration. Chris is also the co-host of The Record. He lives on <a href=\"http://www.ci.bainbridge-isl.wa.us/\">Bainbridge Island</a>, a quick ferry ride from Seattle.",
+            "summary": "Brent interviews Chris Parrish, co-host of The Record and one-half of Aged & Distilled.",
+            "date_published": "2014-05-09T14:04:00-07:00",
+            "attachments": [
+                {
+                    "url": "http://therecord.co/downloads/The-Record-sp1e1-ChrisParrish.m4a",
+                    "mime_type": "audio/x-m4a",
+                    "size_in_bytes": 89970236,
+                    "duration_in_seconds": 6629
+                }
+            ]
+        }
+    ]
+}
+```
 
 Note that it uses both `content_text` and `content_html`, which is completely valid. An app such as iTunes, for instance, might prefer to use `content_text`, while a feed reader might prefer `content_html`.
 
@@ -274,26 +290,28 @@ Also note while there is just one attachment in this example, there could be sev
 
 ### Microblog <a name="microblog"></a>
 
-	{
-		"version": "https://jsonfeed.org/version/1",
-		"user_comment": "This is a microblog feed. You can add this to your feed reader using the following URL: https://example.org/feed.json",
-		"title": "Brent Simmons’s Microblog",
-		"home_page_url": "https://example.org/",
-		"feed_url": "https://example.org/feed.json",
-		"author": {
-			"name": "Brent Simmons",
-			"url": "http://example.org/",
-			"avatar": "https://example.org/avatar.png"
-		},
-		"items": [
-			{
-				"id": "2347259",
-				"url": "https://example.org/2347259",
-				"content_text": "Cats are neat. \n\nhttps://example.org/cats",
-				"date_published": "2016-02-09T14:22:00-07:00"
-			}
-		]
-	}
+```json
+{
+    "version": "https://jsonfeed.org/version/1",
+    "user_comment": "This is a microblog feed. You can add this to your feed reader using the following URL: https://example.org/feed.json",
+    "title": "Brent Simmons’s Microblog",
+    "home_page_url": "https://example.org/",
+    "feed_url": "https://example.org/feed.json",
+    "author": {
+        "name": "Brent Simmons",
+        "url": "http://example.org/",
+        "avatar": "https://example.org/avatar.png"
+    },
+    "items": [
+        {
+            "id": "2347259",
+            "url": "https://example.org/2347259",
+            "content_text": "Cats are neat. \n\nhttps://example.org/cats",
+            "date_published": "2016-02-09T14:22:00-07:00"
+        }
+    ]
+}
+```
 
 Note that `content_text` contains a URL. It’s still plain text. A reader may choose to turn URLs in plain text into clickable links. Note also that there’s no `title`.
 
