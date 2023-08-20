@@ -35,5 +35,6 @@
 * [JS JSON Feed to RSS converter](https://github.com/bcomnes/jsonfeed-to-rss) (with full Apple Podcast support) by Bret Comnes
 * [Perl5 JSON::Feed parser and generator](https://metacpan.org/pod/JSON::Feed) by Kang-min Liu
 * [Eleventy plugin](https://www.npmjs.com/package/eleventy-plugin-json-feed) by John SJ Anderson
+* [TypeScript types](https://github.com/juice49/json-feed-types) by Ash
 
 As more code is published, by us and others, we’ll add to this page.
