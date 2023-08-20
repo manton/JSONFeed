@@ -7,6 +7,7 @@
 * [Swift parsing library](https://github.com/wesbillman/JSONFeed) by Wes Billman
 * [Go package](https://github.com/st3fan/jsonfeed) by Stefan Arentz
 * [Go package](https://github.com/kr/jsonfeed) by Keith Rarick
+* [Go package](https://github.com/gopherlibs/jsonfeed) by Ricardo N Feliciano
 * [Jekyll feed template](https://github.com/vallieres/jekyll-json-feed) by Alexandre Vallières-Lagacé
 * [Jekyll feed with attachments](https://github.com/tedchoward/tidbits/blob/master/feed.json) by Ted Howard
 * [Movable Type template](https://gist.github.com/walt/8da71fead3b8ba321f91efd954f0cb32) by Walt Grayson
