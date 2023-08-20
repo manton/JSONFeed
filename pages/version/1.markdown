@@ -187,6 +187,8 @@ JSON Feeds should be encoded using UTF-8 — but any encoding that’s [legal JS
 
 Any publisher already publishing RSS and/or Atom should continue to do so. In fact, if you’re trying to decide which format (of RSS, Atom, and JSON Feed) to use, and you can do only one, pick RSS — it’s time-tested, popular, and good.
 
+Publishers that include HTML content via the `content_html` property may include `<img>` tags and other tags that reference resources by relative path, though it is preferred to provide full URLs for referenced content. Relative paths should be based upon the associated item's `url` property.
+
 ## Suggestions for Feed Readers <a name="suggestions-for-feed-readers"></a>
 
 If a feed is invalid JSON, then we strongly recommend not attempting to parse it or use partial data. You can’t rely on it.
@@ -204,6 +206,8 @@ For web-based feed readers, it would be helpful to publishers if you reported yo
 Feed readers are strongly advised to use [Conditional GET](https://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers/), in order to minimize bandwidth and CPU cycles on clients and servers.
 
 On the issue of which URL to use — `url` or `external_url` — when opening a web page: because an item’s `url` is always a permalink, the `url` should be the default. For linkblogs that include an `external_url`, feed readers may give users a choice which URL to open: perhaps by displaying the `external_url` prominently in the UI, perhaps by a preference to use these URLs when present, or by some other mechanism.
+
+For feeds that include HTML content in an item via the `content_html` property, publishers may include `<img>` tags and other tags that reference resources by relative path. Consumers of JSON Feed should interpret those relative paths based upon the item's `url` property.
 
 ### Discovery <a name="discovery"></a>
 
