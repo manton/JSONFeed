@@ -85,7 +85,7 @@ After that there’s an array of objects — `items` — that describe each obj
 
 * `expired` (optional, boolean) says whether or not the feed is finished — that is, whether or not it will ever update again. A feed for a temporary event, such as an instance of the Olympics, could expire. If the value is `true`, then it’s expired. Any other value, or the absence of `expired`, means the feed may continue to update.
 
-* `hubs` (very optional, array of objects) describes endpoints that can be used to subscribe to real-time notifications from the publisher of this feed. Each object has a `type` and `url`, both of which are required. See the section “Subscribing to Real-time Notifications” below for details.
+* `hubs` (very optional, array of objects) describes endpoints that can be used to subscribe to real-time notifications from the publisher of this feed. Each object has a `type` and `url`, both of which are required strings. See the section “Subscribing to Real-time Notifications” below for details.
 
 ### Items <a name="items"></a>
 
