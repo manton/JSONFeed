@@ -15,6 +15,7 @@
 * [Rust crate](https://crates.io/crates/jsonfeed) by Paul Woolcock
 * [Hugo feed template](https://gist.github.com/voidfiles/302e8d690a5ef4990e371ce70bca3240) by Alex Kessinger
 * [Hugo feed template](https://github.com/frjo/hugo-theme-zen/blob/master/layouts/_default/list.json.json) by Fredrik Jonsson
+* [Python feedparser](https://feedparser.readthedocs.io) by Kurt McKee
 * [Python feed validator](https://github.com/voidfiles/jsonfeedvalidator) by Alex Kessinger
 * [Ruby feedparser gem](http://www.rubyflow.com/p/a57is4-added-new-json-feed-jsonfeed-format-to-the-universal-feedparser-gem) support added by Gerald Bauer
 * [RSS/Atom to JSON Feed converter](https://github.com/appsattic/feed2json.org) and [web service](https://feed2json.org) by Andrew Chilton
