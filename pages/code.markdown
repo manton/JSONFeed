@@ -26,6 +26,7 @@
 * [Pelican feed template](https://github.com/andrewheiss/athpelican/blob/master/theme/templates/feed.json) by Andrew Heiss
 * [C# parsing library](https://github.com/gramgibson/jsonfeed) by Gram Gibson
 * [C# parsing & generator library](https://github.com/DanRigby/JsonFeed.NET) by Dan Rigby
+* [JSON schema for JSON feeds](https://github.com/sonicdoe/jsonfeed-schema) by Jakob Krigovsky
 * [Crystal parser & generator library](https://github.com/DougEverly/jsonfeed.cr) by Doug Everly
 * [Ruby Feedjira gem](https://github.com/feedjira/feedjira) support added by Jonathan Pike
 * [FeedKit](https://github.com/nmdias/FeedKit) by Nuno Dias
