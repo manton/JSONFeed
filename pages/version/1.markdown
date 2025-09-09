@@ -310,6 +310,7 @@ There are some JSON Feeds on the web:
 * [Timetable](http://timetable.manton.org/feed.json) (podcast)
 * [The Record](http://therecord.co/feed.json) (podcast)
 * [Allen Pike](http://www.allenpike.com/feed.json)
+* [Hipster Pixel](https://hipsterpixel.co/feed.json) (images)
 
 In addition, this website has its own [JSON Feed](https://jsonfeed.org/feed.json).
 
