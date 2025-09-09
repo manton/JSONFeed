@@ -7,6 +7,7 @@
 * [Swift parsing library](https://github.com/wesbillman/JSONFeed) by Wes Billman
 * [Go package](https://github.com/st3fan/jsonfeed) by Stefan Arentz
 * [Go package](https://github.com/kr/jsonfeed) by Keith Rarick
+* [Go package](https://github.com/gopherlibs/jsonfeed) by Ricardo N Feliciano
 * [Jekyll feed template](https://github.com/vallieres/jekyll-json-feed) by Alexandre Vallières-Lagacé
 * [Jekyll feed with attachments](https://github.com/tedchoward/tidbits/blob/master/feed.json) by Ted Howard
 * [Movable Type template](https://gist.github.com/walt/8da71fead3b8ba321f91efd954f0cb32) by Walt Grayson
@@ -14,6 +15,7 @@
 * [Craft CMS with Element API](https://github.com/craftcms/element-api/tree/v1#json-feed) by Pixel & Tonic
 * [Rust crate](https://crates.io/crates/jsonfeed) by Paul Woolcock
 * [Rust feed parser](https://crates.io/crates/feed-rs) by Mark Pritchard
+* [Rust crate](https://crates.io/crates/json-feed-model) by Bryant Luk
 * [Hugo feed template](https://gist.github.com/voidfiles/302e8d690a5ef4990e371ce70bca3240) by Alex Kessinger
 * [Hugo feed template](https://github.com/frjo/hugo-theme-zen/blob/master/layouts/_default/list.json.json) by Fredrik Jonsson
 * [Python feed validator](https://github.com/voidfiles/jsonfeedvalidator) by Alex Kessinger
@@ -27,11 +29,13 @@
 * [Pelican feed template](https://github.com/andrewheiss/athpelican/blob/master/theme/templates/feed.json) by Andrew Heiss
 * [C# parsing library](https://github.com/gramgibson/jsonfeed) by Gram Gibson
 * [C# parsing & generator library](https://github.com/DanRigby/JsonFeed.NET) by Dan Rigby
+* [JSON schema for JSON feeds](https://github.com/sonicdoe/jsonfeed-schema) by Jakob Krigovsky
 * [Crystal parser & generator library](https://github.com/DougEverly/jsonfeed.cr) by Doug Everly
 * [Ruby Feedjira gem](https://github.com/feedjira/feedjira) support added by Jonathan Pike
 * [FeedKit](https://github.com/nmdias/FeedKit) by Nuno Dias
 * [Scala parser & generator library](https://github.com/chobeat/scala-json-feed) by Simone Robutti
 * [Java parsing library](https://github.com/devilgate/pertwee) by Martin McCallion
+* [JS parsing library](https://github.com/Guichaguri/post-feed-reader) by Guilherme Chaguri
 * [JS JSON Feed to Atom converter](https://github.com/bcomnes/jsonfeed-to-atom) by Bret Comnes
 * [JS JSON Feed to RSS converter](https://github.com/bcomnes/jsonfeed-to-rss) (with full Apple Podcast support) by Bret Comnes
 * [Perl5 JSON::Feed parser and generator](https://metacpan.org/pod/JSON::Feed) by Kang-min Liu
