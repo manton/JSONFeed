@@ -41,5 +41,6 @@
 * [Perl5 JSON::Feed parser and generator](https://metacpan.org/pod/JSON::Feed) by Kang-min Liu
 * [Eleventy plugin](https://www.npmjs.com/package/eleventy-plugin-json-feed) by John SJ Anderson
 * [Mkdocs RSS plugin](https://guts.github.io/mkdocs-rss-plugin/) by Julien Moura
+* [JsonFeed Parser for Dart](https://pub.dev/packages/json_feed) by Imprologic
 
 As more code is published, by us and others, we’ll add to this page.
