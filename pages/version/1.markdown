@@ -119,7 +119,7 @@ After that there’s an array of objects — `items` — that describe each obj
 
 An individual item may have one or more attachments.
 
-* `attachments` (optional, array) lists related resources. Podcasts, for instance, would include an attachment that’s an audio or video file. Each attachment has several members:
+* `attachments` (optional, array of objects) lists related resources. Podcasts, for instance, would include an attachment that’s an audio or video file. Each attachment has several members:
 
     * `url` (required, string) specifies the location of the attachment.
 
